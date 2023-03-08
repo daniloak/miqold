@@ -1,7 +1,29 @@
+import { Flex, Button, Stack } from "@chakra-ui/react";
 import { Inter } from "next/font/google";
+import { Input } from "../components/Form/Input";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Home() {
-  return <h1>hell asdsadasdsad asdasdsad asdaso</h1>;
+export default function SignIn() {
+  return (
+    <Flex w="100vw" h="100vh" align="center" justify="center">
+      <Flex
+        as="form"
+        width="100%"
+        maxWidth={360}
+        bg="gray.800"
+        padding="8"
+        borderRadius={8}
+        flexDir="column"
+      >
+        <Stack spacing="4">
+          <Input name="email" type="email" label="E-mail"></Input>
+          <Input name="password" type="password" label="Senha"></Input>
+        </Stack>
+        <Button type="submit" mt="6" colorScheme="blue" size="lg">
+          Entrar
+        </Button>
+      </Flex>
+    </Flex>
+  );
 }
