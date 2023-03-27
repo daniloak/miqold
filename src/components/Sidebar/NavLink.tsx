@@ -1,3 +1,4 @@
+import NextLink from "next/link";
 import {
   Icon,
   Link as ChakraLink,
@@ -16,7 +17,7 @@ interface NavLinkProps extends ChakraLinkProps {
 export function NavLink({ icon, children, href, ...rest }: NavLinkProps) {
   return (
     <ActiveLink href={href} passHref>
-      <ChakraLink display="flex" {...rest}>
+      <ChakraLink as={NextLink} display="flex" {...rest}>
         <Icon as={icon} fontSize="20" />
         <Text ml="4" fontWeight="medium">
           {children}
